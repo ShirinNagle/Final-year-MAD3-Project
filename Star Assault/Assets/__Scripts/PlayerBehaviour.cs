@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    [Header("Speed")]
     [SerializeField] float xSpeed = 4.0f;   // default is in ms^-1
     [SerializeField] float ySpeed = 4.0f;   // default is in ms^-1
+    [Header("Clamp range")]
     [SerializeField] float hClamp = 10.0f;
     [SerializeField] float vClamp = 7.0f;
-
+    [Header("Control throw")]
     [SerializeField] float controlPitchFactor = -30.0f;
-
+    [SerializeField] float controlRollFactor = -30.0f;
+    [Header("Screen Position")]
     [SerializeField] float positionPitchFactor = -1.0f;
     [SerializeField] float positionYawFactor = -2.0f;
-    [SerializeField] float controlRollFactor = -30.0f;
+    
 
     float horizontalThrow, verticalThrow;
     bool controlsActive;
@@ -24,6 +27,7 @@ public class PlayerBehaviour : MonoBehaviour
         controlsActive = true;
     }
 
+    
     // Update is called once per frame
     void Update()
     {
@@ -35,9 +39,10 @@ public class PlayerBehaviour : MonoBehaviour
 
     }
 
-    private void PlayerHasDied()  // call by string reference
+    private void OnPlayerDeath()  // call by string reference
     {
         controlsActive = false;
+        //print("controls frozen");
     }
 
 
