@@ -164,15 +164,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 232.32
+      value: 244.9
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.25
+      value: 28.4
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 952.31
+      value: 986.9
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalRotation.x
@@ -418,6 +418,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f3e1c31aac73d48b5053ed94c73437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFX: {fileID: 4065104558340024456, guid: c2770378d0f4c47488da566206a77b82, type: 3}
+  parent: {fileID: 1364620499}
+  scorePerHitEnemy: 50
 --- !u!1 &271565788
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,15 +524,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 215.43555
+      value: 204
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.91
+      value: 26.3
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 951.59
+      value: 982.4
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalRotation.x
@@ -794,6 +797,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f3e1c31aac73d48b5053ed94c73437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFX: {fileID: 4065104558340024456, guid: c2770378d0f4c47488da566206a77b82, type: 3}
+  parent: {fileID: 1364620499}
+  scorePerHitEnemy: 50
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,11 +1216,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 36.7
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 941.01324
+      value: 1004.8
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1287,6 +1293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f3e1c31aac73d48b5053ed94c73437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFX: {fileID: 4065104558340024456, guid: c2770378d0f4c47488da566206a77b82, type: 3}
+  parent: {fileID: 1364620499}
+  scorePerHitEnemy: 50
 --- !u!1001 &1224716105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1304,11 +1313,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 22.6
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 941.01324
+      value: 974.5
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1377,6 +1386,36 @@ Transform:
   - {fileID: 613593428}
   m_Father: {fileID: 0}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1364620498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1364620499}
+  m_Layer: 0
+  m_Name: Spawned at RunTime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1364620499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364620498}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 367.98, y: 70, z: 950}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1516159489 stripped
 GameObject:
@@ -1596,6 +1635,7 @@ GameObject:
   - component: {fileID: 1835143789}
   - component: {fileID: 1835143791}
   - component: {fileID: 1835143790}
+  - component: {fileID: 1835143792}
   m_Layer: 5
   m_Name: score
   m_TagString: Untagged
@@ -1653,7 +1693,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 45678
+  m_Text: 456789
 --- !u!222 &1835143791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1662,6 +1702,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835143788}
   m_CullTransparentMesh: 0
+--- !u!114 &1835143792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835143788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1018e885d3edb8e4b9ae240e416e4b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1900320797 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1754910023302818, guid: 60f26d6465b822444ab5dadf5986bb35,
@@ -1699,6 +1751,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f3e1c31aac73d48b5053ed94c73437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFX: {fileID: 4065104558340024456, guid: c2770378d0f4c47488da566206a77b82, type: 3}
+  parent: {fileID: 1364620499}
+  scorePerHitEnemy: 100
 --- !u!1 &1912986106 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8883572619875093189, guid: f90f91c753a00b743a497283d1d5a987,

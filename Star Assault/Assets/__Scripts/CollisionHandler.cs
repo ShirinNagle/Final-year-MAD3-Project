@@ -9,14 +9,15 @@ public class CollisionHandler : MonoBehaviour
     [Tooltip("Explosion fx prefab on player goes here")] [SerializeField] GameObject deathFX;
     private void OnTriggerEnter(Collider other)
     {
-        //print("Player triggered something");//left in for testing purposes
+        print("Player triggered something");//left in for testing purposes
         StartPlayerDeath();
         deathFX.SetActive(true);
         Invoke("ReloadScene", loadLevelDelay);
     }
     private void StartPlayerDeath()
     {
-        //print("player took a hit!");
+        print("player took a hit!");
+        //consider changing names to something more generic for reuse of code ie enemy could die ... 
         SendMessage("OnPlayerDeath");//string reference collisionHandler
 
     }
