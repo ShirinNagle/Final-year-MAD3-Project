@@ -8,13 +8,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] Transform parent;
 
     [SerializeField] int scorePerHitEnemy = 50;
-    // [SerializeField] int scorePerHitEnemySmall = 100;
+    [SerializeField] int maxEnemyHits = 4;
 
     Score scoreBoard;
     void Start()
     {
         AddBoxCollider();
         scoreBoard = FindObjectOfType<Score>();
+        //ProcessFiring();
     }
 
     private void AddBoxCollider()
@@ -27,7 +28,23 @@ public class Enemy : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        ProcessHit();
+        //may need to add sound fx as per game design
+        if (maxEnemyHits <= 1)
+        {
+            KillEnemy();
+        }
+
+    }
+
+    private void ProcessHit()
+    {
         scoreBoard.ScoreHit(scorePerHitEnemy);
+        maxEnemyHits--;
+    }
+
+    private void KillEnemy()
+    {
         GameObject enemyFX = Instantiate(deathFX, transform.position, Quaternion.identity);
         enemyFX.transform.parent = parent;
         //print("Particles collided with enemy" + gameObject.name);

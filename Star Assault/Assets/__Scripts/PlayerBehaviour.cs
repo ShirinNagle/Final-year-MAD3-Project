@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    [Header("Speed")]
+    [Header("General")]
     [SerializeField] float xSpeed = 4.0f;   // default is in ms^-1
     [SerializeField] float ySpeed = 4.0f;   // default is in ms^-1
+    [SerializeField] GameObject[] bullets;
     [Header("Clamp range")]
     [SerializeField] float hClamp = 10.0f;
     [SerializeField] float vClamp = 7.0f;
@@ -25,6 +27,7 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         controlsActive = true;
+        
     }
 
     
@@ -35,6 +38,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             ProcessTranslation();
             ProcessRotation();
+            ProcessFiring();
         }
 
     }
@@ -69,5 +73,28 @@ public class PlayerBehaviour : MonoBehaviour
         transform.localPosition = new Vector3(xPos,
                                               yPos,
                                               transform.localPosition.z);
+    }
+
+    private void ProcessFiring()
+    {
+        if (Input.GetButton("Fire"))
+        {
+            print("fire button working");
+            print(bullets.Length);
+            ActivateBullets(true);
+        }
+        else
+        {
+            ActivateBullets(false);
+        }
+    }
+    void ActivateBullets(bool isActive)
+    {
+        foreach(GameObject bullet in bullets)//fix code for active and inactive, may effect explosion which is a child of GameObject
+        {
+            bullet.SetActive(true);
+            var emissionElement = bullet.GetComponent<ParticleSystem>().emission;
+            emissionElement.enabled = isActive;
+        }
     }
 }
