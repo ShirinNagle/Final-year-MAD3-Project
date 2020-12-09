@@ -759,6 +759,7 @@ GameObject:
   - component: {fileID: 1326922646}
   - component: {fileID: 1326922645}
   - component: {fileID: 1326922644}
+  - component: {fileID: 1326922647}
   m_Layer: 5
   m_Name: Single Player
   m_TagString: Untagged
@@ -828,7 +829,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1326922645}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1326922647}
+        m_MethodName: startGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1326922645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -865,6 +877,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326922642}
   m_CullTransparentMesh: 0
+--- !u!114 &1326922647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326922642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b246e78e1814e479ced3e435a0389b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1661866030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,6 +1341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Music Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5082576078933089556, guid: e4d58f9cc6b75cf498fdb8f51c36b87b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5082576078933089559, guid: e4d58f9cc6b75cf498fdb8f51c36b87b,
         type: 3}

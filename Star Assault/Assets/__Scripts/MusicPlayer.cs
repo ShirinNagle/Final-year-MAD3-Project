@@ -23,7 +23,12 @@ public class MusicPlayer : MonoBehaviour
 
     void Start()
     {
-        Invoke("LoadScene", 7f);
+        Invoke("LoadScene", 5f);
+        if (MenuPause.gameIsPaused)
+        {
+            //AudioSource sound =//need to figure out how to access music player if I want the music to stop or get quieter if the game is paused
+           
+        }
 
     }
 
@@ -31,4 +36,5 @@ public class MusicPlayer : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
 }

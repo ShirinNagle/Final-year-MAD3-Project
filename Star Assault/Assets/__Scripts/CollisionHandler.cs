@@ -29,7 +29,7 @@ public class CollisionHandler : MonoBehaviour
     {
         print("player took a hit!");
         //consider changing names to something more generic for reuse of code ie enemy could die ... 
-        SendMessage("OnPlayerDeath");//string reference collisionHandler
+        //SendMessage("OnPlayerDeath");//string reference collisionHandler -not sure where this refers to!!
         //need to add explosion and stuff here
 
     }

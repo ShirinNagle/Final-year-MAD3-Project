@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelLoader : MonoBehaviour
+public class StartButton: MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        Invoke("LoadScene", 2f);
-
-    }
-
-    void LoadScene()
+   //event handler
+   public void startGame()
     {
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
-    
+    public void startMultiPlayerGame()
+    {
+        //code to go here which triggers the multiplayer element of the game...not sure how best to implement yet.
+    }
 }

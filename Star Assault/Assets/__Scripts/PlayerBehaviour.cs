@@ -47,6 +47,12 @@ public class PlayerBehaviour : MonoBehaviour
     {
         controlsActive = false;
         //print("controls frozen");
+        //need to add more code here for the dying part
+
+        //player is dying somewhere else ...likethe collisionhandler, need to see where is best place for killing player
+
+        //call the sessionController to kill the player
+        //FindObjectOfType<GameSessionController>().processPlayerDeath();
     }
 
 

@@ -5,9 +5,9 @@ using UnityEngine;
 public class ScenePersists : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        int numScenePersists = FindObjectsOfType<ScenePersists>().Length;
     }
 
     // Update is called once per frame

@@ -11,11 +11,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] int maxEnemyHits = 4;
 
     Score scoreBoard;
+    GameSessionController gameSession;
     void Start()
     {
         AddBoxCollider();
-        scoreBoard = FindObjectOfType<Score>();
+        //scoreBoard = FindObjectOfType<Score>();
         //ProcessFiring();
+        gameSession = FindObjectOfType<GameSessionController>();
     }
 
     private void AddBoxCollider()
@@ -39,7 +41,8 @@ public class Enemy : MonoBehaviour
 
     private void ProcessHit()
     {
-        scoreBoard.ScoreHit(scorePerHitEnemy);
+        //scoreBoard.ScoreHit(scorePerHitEnemy);
+        gameSession.addScore(scorePerHitEnemy);
         maxEnemyHits--;
     }
 
