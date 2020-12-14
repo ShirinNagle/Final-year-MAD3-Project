@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 51403486}
   - component: {fileID: 51403488}
   - component: {fileID: 51403487}
+  - component: {fileID: 51403489}
   m_Layer: 5
   m_Name: HighScore
   m_TagString: Untagged
@@ -275,6 +276,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51403485}
   m_CullTransparentMesh: 0
+--- !u!114 &51403489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51403485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1018e885d3edb8e4b9ae240e416e4b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &525390663
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -15, y: -35.4}
+  m_AnchoredPosition: {x: -15, y: -93}
   m_SizeDelta: {x: 375.5, y: 47.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &941136664
@@ -589,6 +602,7 @@ GameObject:
   - component: {fileID: 1046471229}
   - component: {fileID: 1046471231}
   - component: {fileID: 1046471230}
+  - component: {fileID: 1046471232}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -656,6 +670,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046471228}
   m_CullTransparentMesh: 0
+--- !u!114 &1046471232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046471228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f7180d4d56d1d42a7054db939348d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScore: 0
+  scoreText: {fileID: 51403487}
+  finalScore: {fileID: 0}
+  healthBar: {fileID: 0}
+  currentHealth: 0
+  maxHealth: 100
 --- !u!1 &1189416746
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +700,7 @@ GameObject:
   - component: {fileID: 1189416749}
   - component: {fileID: 1189416748}
   - component: {fileID: 1189416747}
+  - component: {fileID: 1189416751}
   m_Layer: 5
   m_Name: Game Over Canvas
   m_TagString: Untagged
@@ -755,6 +788,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1189416751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189416746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f7180d4d56d1d42a7054db939348d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScore: 0
+  scoreText: {fileID: 0}
+  finalScore: {fileID: 51403487}
+  healthBar: {fileID: 0}
+  currentHealth: 0
+  maxHealth: 100
 --- !u!1 &1221075844
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,8 +936,9 @@ GameObject:
   - component: {fileID: 1389646705}
   - component: {fileID: 1389646704}
   - component: {fileID: 1389646703}
+  - component: {fileID: 1389646706}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Play Again
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -909,7 +961,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 42}
+  m_AnchoredPosition: {x: 0, y: 113.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1389646703
@@ -954,7 +1006,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1389646704}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1389646706}
+        m_MethodName: playAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1389646704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,6 +1054,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389646701}
   m_CullTransparentMesh: 0
+--- !u!114 &1389646706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389646701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b246e78e1814e479ced3e435a0389b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1805700870
 GameObject:
   m_ObjectHideFlags: 0

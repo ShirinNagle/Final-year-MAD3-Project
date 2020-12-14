@@ -1,0 +1,72 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+
+//https://github.com/b3agz/quick-bits/blob/master/simple-dynamic-crosshair/SimpleDynamicCrosshair.cs
+//https://www.youtube.com/watch?v=-7DIdKTNjfQ
+public class CrossHairs : MonoBehaviour
+{
+
+    private RectTransform reticle; // The RecTransform of reticle UI element.
+
+    public Rigidbody playerRigidbody;//currenlty reticle is behind or on top of the player, need to figure out how to move it forward.
+
+    public float restingSize;
+    public float maxSize;
+    public float speed;
+    private float currentSize;
+
+    private void Start()
+    {
+
+        reticle = GetComponent<RectTransform>();
+
+    }
+
+    private void Update()
+    {
+
+        // Check if player is currently moving and Lerp currentSize to the appropriate value.
+        if (isMoving)
+        {
+            currentSize = Mathf.Lerp(currentSize, maxSize, Time.deltaTime * speed);
+        }
+        else
+        {
+            currentSize = Mathf.Lerp(currentSize, restingSize, Time.deltaTime * speed);
+        }
+
+        // Set the reticle's size to the currentSize value.
+        reticle.sizeDelta = new Vector2(currentSize, currentSize);
+
+    }
+
+    // Bool to check if player is currently moving.
+    bool isMoving
+    {
+
+        get
+        {
+
+            // If we have assigned a rigidbody, check if its velocity is not zero. If so, return true.
+            if (playerRigidbody != null)
+                if (playerRigidbody.velocity.sqrMagnitude != 0)
+                    return true;
+                else
+                    return false;
+
+            // If not rigidbody is assigned, check Input axis' instead.
+            if (
+                Input.GetAxis("Horizontal") != 0 ||
+                Input.GetAxis("Vertical") != 0 ||
+                Input.GetAxis("Mouse X") != 0 ||
+                Input.GetAxis("Mouse Y") != 0
+                    )
+                return true;
+            else
+                return false;
+
+        }
+
+    }
+
+}
